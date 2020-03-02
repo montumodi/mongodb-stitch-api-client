@@ -1,6 +1,6 @@
 {
   "name": "mongodb-stitch-api-client",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A mongodb stitch api client for nodejs.",
   "main": "src/index.js",
   "scripts": {
