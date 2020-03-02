@@ -17,7 +17,7 @@ describe("Mongo Stitch Api Client - INdex", () => {
         "projectId": projectId
       });
 
-      expect(client).to.be.null();
+      expect(client).to.be.not.null();
     });
   });
 });
