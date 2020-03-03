@@ -17,7 +17,7 @@ class Trigger {
         "Authorization": `Bearer ${bearerToken}`
       },
       "throwHttpErrors": false
-    });
+    }).json();
     return response;
   }
 
@@ -27,6 +27,19 @@ class Trigger {
       "url": `${this.baseUrl_}/groups/${this.projectId_}/apps/${this.appId_}/triggers/${triggerId}`,
       "method": "PUT",
       "body": JSON.stringify(body),
+      "headers": {
+        "Authorization": `Bearer ${bearerToken}`
+      },
+      "throwHttpErrors": false
+    }).json();
+    return response;
+  }
+
+  async resume(triggerId) {
+    const bearerToken = await this.tokenProvider_.getBearerToken();
+    const response = await this.client_({
+      "url": `${this.baseUrl_}/groups/${this.projectId_}/apps/${this.appId_}/triggers/${triggerId}/resume`,
+      "method": "PUT",
       "headers": {
         "Authorization": `Bearer ${bearerToken}`
       },

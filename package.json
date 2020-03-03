@@ -22,10 +22,11 @@
     "url": "git+https://github.com/montumodi/mongodb-stitch-api-client.git"
   },
   "keywords": [
-    "mongo",
     "mongodb",
-    "atlas",
     "stitch",
+    "atlas",
+    "trigger",
+    "mongo",
     "api",
     "client",
     "driver",

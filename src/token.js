@@ -13,7 +13,8 @@ class Token {
       "body": JSON.stringify({
         "username": this.publicKey_,
         "apiKey": this.privateKey_
-      })
+      }),
+      "throwHttpErrors": false
     }).json();
     return response.access_token;
   }

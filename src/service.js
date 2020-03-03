@@ -17,14 +17,14 @@ class Service {
         "Authorization": `Bearer ${bearerToken}`
       },
       "throwHttpErrors": false
-    });
+    }).json();
     return response;
   }
 
-  async update(triggerId, body) {
+  async update(serviceId, body) {
     const bearerToken = await this.tokenProvider_.getBearerToken();
     const response = await this.client_({
-      "url": `${this.baseUrl_}/groups/${this.projectId_}/apps/${this.appId_}/services/${triggerId}`,
+      "url": `${this.baseUrl_}/groups/${this.projectId_}/apps/${this.appId_}/services/${serviceId}`,
       "method": "PUT",
       "body": JSON.stringify(body),
       "headers": {
@@ -48,10 +48,10 @@ class Service {
     return response;
   }
 
-  async delete(triggerId) {
+  async delete(serviceId) {
     const bearerToken = await this.tokenProvider_.getBearerToken();
     const response = await this.client_({
-      "url": `${this.baseUrl_}/groups/${this.projectId_}/apps/${this.appId_}/services/${triggerId}`,
+      "url": `${this.baseUrl_}/groups/${this.projectId_}/apps/${this.appId_}/services/${serviceId}`,
       "method": "DELETE",
       "headers": {
         "Authorization": `Bearer ${bearerToken}`
