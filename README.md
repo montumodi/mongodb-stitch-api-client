@@ -22,21 +22,73 @@ The basic syntax is:
 
 ```js
 const getClient = require("mongodb-stitch-api-client");
-const {trigger} = getClient({
+
+const {trigger, application} = getClient({
   "publicKey": "some public key",
   "privateKey": "some private key",
-  "baseUrl": "https://cloud.mongodb.com/api/atlas/v1.0",
-  "projectId": "some project/group id"
+  "baseUrl": "https://stitch.mongodb.com/api/admin/v3.0",
+  "projectId": "some project/group id",
+  "appId": "some stitch appId" // Optional when you are creating app using Application
 });
 
-const options = {
-  "envelope": true,
-  "itemsPerPage": 10,
-  "pretty": true
-}
+await trigger.getAll();
+const createApplication = await application.create({"name": "myFirstStitchApp", "deployment_model": "LOCAL", "location": "IE"});
 
 ```
 
 ## Running the tests
 
 `npm test`
+
+### API
+
+Following entities are currently supported
+
+- [Application](#application)
+
+### Application
+
+### application.getAll([productType]) ⇒ <code>Promise</code>
+Function - Returns all the applications.
+
+**Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error 
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| [productType] | <code>string</code> | <code>standard</code> | Optional string containing name of product type |
+
+More details - https://docs.mongodb.com/stitch/admin/api/admin-v3/#get-/groups/{groupid}/apps
+
+### application.create(body, [productType]) ⇒ <code>Promise</code>
+Function - Creates the stitch application as per the body passed.
+
+**Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| body | <code>String</code> |  | body which has application details |
+| [productType] | <code>string</code> | <code>standard</code> | Optional string containing name of product type |
+
+More details - https://docs.mongodb.com/stitch/admin/api/admin-v3/#post-/groups/{groupid}/apps
+
+### application.delete(appId) ⇒ <code>Promise</code>
+Function - Deletes the stitch application as per the appId passed.
+
+**Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| appId | <code>String</code> |  | appId which needs to be deleted. |
+
+More details - https://docs.mongodb.com/stitch/admin/api/admin-v3/#delete-/groups/{groupid}/apps/{appid}
+
+### application.get(appId) ⇒ <code>Promise</code>
+Function - Returns the stitch application as per the appId passed.
+
+**Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| appId | <code>String</code> |  | appId which needs to be fetched. |
+
+More details - https://docs.mongodb.com/stitch/admin/api/admin-v3/#get-/groups/{groupid}/apps/{appid}

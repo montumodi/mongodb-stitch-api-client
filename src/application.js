@@ -33,6 +33,19 @@ class Application {
     return response;
   }
 
+  async get(appId) {
+    const bearerToken = await this.tokenProvider_.getBearerToken();
+    const response = await this.client_({
+      "url": `${this.baseUrl_}/groups/${this.projectId_}/apps/${appId}`,
+      "method": "GET",
+      "headers": {
+        "Authorization": `Bearer ${bearerToken}`
+      },
+      "throwHttpErrors": false
+    }).json();
+    return response;
+  }
+
   async delete(appId) {
     const bearerToken = await this.tokenProvider_.getBearerToken();
     const response = await this.client_({

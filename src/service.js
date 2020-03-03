@@ -25,7 +25,7 @@ class Service {
     const bearerToken = await this.tokenProvider_.getBearerToken();
     const response = await this.client_({
       "url": `${this.baseUrl_}/groups/${this.projectId_}/apps/${this.appId_}/services/${serviceId}`,
-      "method": "PUT",
+      "method": "PATCH",
       "body": JSON.stringify(body),
       "headers": {
         "Authorization": `Bearer ${bearerToken}`
@@ -39,6 +39,19 @@ class Service {
     const bearerToken = await this.tokenProvider_.getBearerToken();
     const response = await this.client_({
       "url": `${this.baseUrl_}/groups/${this.projectId_}/apps/${this.appId_}/services`,
+      "method": "GET",
+      "headers": {
+        "Authorization": `Bearer ${bearerToken}`
+      },
+      "throwHttpErrors": false
+    }).json();
+    return response;
+  }
+
+  async get(serviceId) {
+    const bearerToken = await this.tokenProvider_.getBearerToken();
+    const response = await this.client_({
+      "url": `${this.baseUrl_}/groups/${this.projectId_}/apps/${this.appId_}/services/${serviceId}`,
       "method": "GET",
       "headers": {
         "Authorization": `Bearer ${bearerToken}`
