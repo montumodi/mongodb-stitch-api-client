@@ -1,4 +1,4 @@
-# Mongodb stitch api client for NODEJS (In Progress)
+# Mongodb stitch api client for NODEJS
 
 A mongdb stitch api client for nodejs.
 
@@ -45,50 +45,196 @@ const createApplication = await application.create({"name": "myFirstStitchApp", 
 Following entities are currently supported
 
 - [Application](#application)
+- [Service](#service)
+- [Trigger](#trigger)
+- [Token](#token)
 
 ### Application
 
-### application.getAll([productType]) ⇒ <code>Promise</code>
-Function - Returns all the applications.
-
-**Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error 
-
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| [productType] | <code>string</code> | <code>standard</code> | Optional string containing name of product type |
-
-More details - https://docs.mongodb.com/stitch/admin/api/admin-v3/#get-/groups/{groupid}/apps
+<a name="Application+create"></a>
 
 ### application.create(body, [productType]) ⇒ <code>Promise</code>
-Function - Creates the stitch application as per the body passed.
+Creates the stitch application
 
+**Kind**: instance method of [<code>Application</code>](#Application)  
 **Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error  
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| body | <code>String</code> |  | body which has application details |
-| [productType] | <code>string</code> | <code>standard</code> | Optional string containing name of product type |
+| body | <code>Object</code> |  | Object that contains stitch application details. |
+| [productType] | <code>string</code> | <code>standard</code> | Optional product type. standard or atlas |
 
-More details - https://docs.mongodb.com/stitch/admin/api/admin-v3/#post-/groups/{groupid}/apps
+<a name="Application+getAll"></a>
 
-### application.delete(appId) ⇒ <code>Promise</code>
-Function - Deletes the stitch application as per the appId passed.
+### application.getAll([productType]) ⇒ <code>Promise</code>
+Returns all applications
 
+**Kind**: instance method of [<code>Application</code>](#Application)  
 **Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error  
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| appId | <code>String</code> |  | appId which needs to be deleted. |
+| [productType] | <code>string</code> | <code>standard</code> | Optional product type. standard or atlas |
 
-More details - https://docs.mongodb.com/stitch/admin/api/admin-v3/#delete-/groups/{groupid}/apps/{appid}
+<a name="Application+get"></a>
 
 ### application.get(appId) ⇒ <code>Promise</code>
-Function - Returns the stitch application as per the appId passed.
+Returns a single application as per app Id
 
+**Kind**: instance method of [<code>Application</code>](#Application)  
 **Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| appId | <code>String</code> |  | appId which needs to be fetched. |
+| Param | Type | Description |
+| --- | --- | --- |
+| appId | <code>string</code> | Application Id |
 
-More details - https://docs.mongodb.com/stitch/admin/api/admin-v3/#get-/groups/{groupid}/apps/{appid}
+<a name="Application+delete"></a>
+
+### application.delete(appId) ⇒ <code>Promise</code>
+Deletes a single application as per app Id
+
+**Kind**: instance method of [<code>Application</code>](#Application)  
+**Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| appId | <code>string</code> | Application Id |
+
+### Service
+
+<a name="Service+create"></a>
+
+### service.create(body) ⇒ <code>Promise</code>
+Creates the service
+
+**Kind**: instance method of [<code>Service</code>](#Service)  
+**Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| body | <code>Object</code> | Object that contains stitch service details. |
+
+<a name="Service+update"></a>
+
+### service.update(serviceId, body) ⇒ <code>Promise</code>
+Updates the service
+
+**Kind**: instance method of [<code>Service</code>](#Service)  
+**Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| serviceId | <code>string</code> | Service Id. |
+| body | <code>Object</code> | Object that contains stitch service details. |
+
+<a name="Service+getAll"></a>
+
+### service.getAll() ⇒ <code>Promise</code>
+Returns all services
+
+**Kind**: instance method of [<code>Service</code>](#Service)  
+**Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error  
+<a name="Service+get"></a>
+
+### service.get(serviceId) ⇒ <code>Promise</code>
+Returns single service as per service Id
+
+**Kind**: instance method of [<code>Service</code>](#Service)  
+**Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| serviceId | <code>string</code> | Service Id |
+
+<a name="Service+delete"></a>
+
+### service.delete(serviceId) ⇒ <code>Promise</code>
+Deletes single service as per service Id
+
+**Kind**: instance method of [<code>Service</code>](#Service)  
+**Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| serviceId | <code>string</code> | Service Id |
+
+### Trigger
+
+
+<a name="Trigger+create"></a>
+
+### trigger.create(body) ⇒ <code>Promise</code>
+Creates the trigger
+
+**Kind**: instance method of [<code>Trigger</code>](#Trigger)  
+**Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| body | <code>Object</code> | Object that contains stitch trigger details. |
+
+<a name="Trigger+update"></a>
+
+### trigger.update(triggerId, body) ⇒ <code>Promise</code>
+Updates the trigger
+
+**Kind**: instance method of [<code>Trigger</code>](#Trigger)  
+**Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| triggerId | <code>string</code> | Service Id. |
+| body | <code>Object</code> | Object that contains stitch trigger details. |
+
+<a name="Trigger+resume"></a>
+
+### trigger.resume(triggerId) ⇒ <code>Promise</code>
+Resumes the trigger
+
+**Kind**: instance method of [<code>Trigger</code>](#Trigger)  
+**Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| triggerId | <code>string</code> | Service Id. |
+
+<a name="Trigger+getAll"></a>
+
+### trigger.getAll() ⇒ <code>Promise</code>
+Returns all triggers
+
+**Kind**: instance method of [<code>Trigger</code>](#Trigger)  
+**Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error  
+<a name="Trigger+get"></a>
+
+### trigger.get(triggerId) ⇒ <code>Promise</code>
+Returns single trigger as per trigger Id
+
+**Kind**: instance method of [<code>Trigger</code>](#Trigger)  
+**Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| triggerId | <code>string</code> | Trigger Id |
+
+<a name="Trigger+delete"></a>
+
+### trigger.delete(triggerId) ⇒ <code>Promise</code>
+Deletes single trigger as per trigger Id
+
+**Kind**: instance method of [<code>Trigger</code>](#Trigger)  
+**Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| triggerId | <code>string</code> | Trigger Id |
+
+### Token
+
+<a name="Token+getBearerToken"></a>
+
+### token.getBearerToken() ⇒ <code>Promise</code>
+Returns the bearer token as per public key and private key
+
+**Kind**: instance method of [<code>Token</code>](#Token)  
+**Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error  
