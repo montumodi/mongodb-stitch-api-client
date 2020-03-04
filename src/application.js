@@ -28,8 +28,7 @@ class Application {
       "body": JSON.stringify(body),
       "headers": {
         "Authorization": `Bearer ${bearerToken}`
-      },
-      "throwHttpErrors": false
+      }
     }).json();
     return response;
   }
@@ -46,8 +45,7 @@ class Application {
       "method": "GET",
       "headers": {
         "Authorization": `Bearer ${bearerToken}`
-      },
-      "throwHttpErrors": false
+      }
     }).json();
     return response;
   }
@@ -64,8 +62,7 @@ class Application {
       "method": "GET",
       "headers": {
         "Authorization": `Bearer ${bearerToken}`
-      },
-      "throwHttpErrors": false
+      }
     }).json();
     return response;
   }
@@ -82,8 +79,7 @@ class Application {
       "method": "DELETE",
       "headers": {
         "Authorization": `Bearer ${bearerToken}`
-      },
-      "throwHttpErrors": false
+      }
     }).json();
     return response;
   }

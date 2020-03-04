@@ -29,8 +29,7 @@ class Service {
       "body": JSON.stringify(body),
       "headers": {
         "Authorization": `Bearer ${bearerToken}`
-      },
-      "throwHttpErrors": false
+      }
     }).json();
     return response;
   }
@@ -49,8 +48,7 @@ class Service {
       "body": JSON.stringify(body),
       "headers": {
         "Authorization": `Bearer ${bearerToken}`
-      },
-      "throwHttpErrors": false
+      }
     }).json();
     return response;
   }
@@ -66,8 +64,7 @@ class Service {
       "method": "GET",
       "headers": {
         "Authorization": `Bearer ${bearerToken}`
-      },
-      "throwHttpErrors": false
+      }
     }).json();
     return response;
   }
@@ -84,8 +81,7 @@ class Service {
       "method": "GET",
       "headers": {
         "Authorization": `Bearer ${bearerToken}`
-      },
-      "throwHttpErrors": false
+      }
     }).json();
     return response;
   }
@@ -102,8 +98,7 @@ class Service {
       "method": "DELETE",
       "headers": {
         "Authorization": `Bearer ${bearerToken}`
-      },
-      "throwHttpErrors": false
+      }
     }).json();
     return response;
   }

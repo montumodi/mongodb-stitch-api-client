@@ -29,8 +29,7 @@ class Trigger {
       "body": JSON.stringify(body),
       "headers": {
         "Authorization": `Bearer ${bearerToken}`
-      },
-      "throwHttpErrors": false
+      }
     }).json();
     return response;
   }
@@ -49,8 +48,7 @@ class Trigger {
       "body": JSON.stringify(body),
       "headers": {
         "Authorization": `Bearer ${bearerToken}`
-      },
-      "throwHttpErrors": false
+      }
     }).json();
     return response;
   }
@@ -67,8 +65,7 @@ class Trigger {
       "method": "PUT",
       "headers": {
         "Authorization": `Bearer ${bearerToken}`
-      },
-      "throwHttpErrors": false
+      }
     }).json();
     return response;
   }
@@ -84,8 +81,7 @@ class Trigger {
       "method": "GET",
       "headers": {
         "Authorization": `Bearer ${bearerToken}`
-      },
-      "throwHttpErrors": false
+      }
     }).json();
     return response;
   }
@@ -102,8 +98,7 @@ class Trigger {
       "method": "GET",
       "headers": {
         "Authorization": `Bearer ${bearerToken}`
-      },
-      "throwHttpErrors": false
+      }
     }).json();
     return response;
   }
@@ -120,8 +115,7 @@ class Trigger {
       "method": "DELETE",
       "headers": {
         "Authorization": `Bearer ${bearerToken}`
-      },
-      "throwHttpErrors": false
+      }
     }).json();
     return response;
   }
