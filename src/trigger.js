@@ -63,6 +63,7 @@ class Trigger {
     const response = await this.client_({
       "url": `${this.baseUrl_}/groups/${this.projectId_}/apps/${this.appId_}/triggers/${triggerId}/resume`,
       "method": "PUT",
+      "body": JSON.stringify({}),
       "headers": {
         "Authorization": `Bearer ${bearerToken}`
       }
