@@ -48,6 +48,7 @@ Following entities are currently supported
 - [Service](#service)
 - [Trigger](#trigger)
 - [Token](#token)
+- [StitchFunction](#stitchfunction)
 
 ### Application
 
@@ -237,4 +238,62 @@ Deletes single trigger as per trigger Id
 Returns the bearer token as per public key and private key
 
 **Kind**: instance method of [<code>Token</code>](#Token)  
+**Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error
+
+### StitchFunction
+
+<a name="StitchFunction+create"></a>
+
+### stitchFunction.create(body) ⇒ <code>Promise</code>
+Creates the function
+
+**Kind**: instance method of [<code>StitchFunction</code>](#StitchFunction)  
 **Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| body | <code>Object</code> | Object that contains stitch functions details. |
+
+<a name="StitchFunction+update"></a>
+
+### stitchFunction.update(functionId, body) ⇒ <code>Promise</code>
+Updates the function
+
+**Kind**: instance method of [<code>StitchFunction</code>](#StitchFunction)  
+**Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| functionId | <code>string</code> | Service Id. |
+| body | <code>Object</code> | Object that contains stitch function details. |
+
+<a name="StitchFunction+getAll"></a>
+
+### stitchFunction.getAll() ⇒ <code>Promise</code>
+Returns all functions
+
+**Kind**: instance method of [<code>StitchFunction</code>](#StitchFunction)  
+**Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error  
+<a name="StitchFunction+get"></a>
+
+### stitchFunction.get(functionId) ⇒ <code>Promise</code>
+Returns single function as per function Id
+
+**Kind**: instance method of [<code>StitchFunction</code>](#StitchFunction)  
+**Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| functionId | <code>string</code> | function Id |
+
+<a name="StitchFunction+delete"></a>
+
+### stitchFunction.delete(functionId) ⇒ <code>Promise</code>
+Deletes single function as per function Id
+
+**Kind**: instance method of [<code>StitchFunction</code>](#StitchFunction)  
+**Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| functionId | <code>string</code> | function Id |
