@@ -49,6 +49,7 @@ Following entities are currently supported
 - [Trigger](#trigger)
 - [Token](#token)
 - [StitchFunction](#stitchfunction)
+- [Rule](#rule)
 
 ### Application
 
@@ -297,3 +298,70 @@ Deletes single function as per function Id
 | Param | Type | Description |
 | --- | --- | --- |
 | functionId | <code>string</code> | function Id |
+
+### Rule
+
+<a name="Rule+create"></a>
+
+### rule.create(serviceId, body) ⇒ <code>Promise</code>
+Creates the rule
+
+**Kind**: instance method of [<code>Rule</code>](#Rule)  
+**Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| serviceId | <code>string</code> | service id |
+| body | <code>Object</code> | Object that contains stitch rules details. |
+
+<a name="Rule+update"></a>
+
+### rule.update(serviceId, ruleId, body) ⇒ <code>Promise</code>
+Updates the rule
+
+**Kind**: instance method of [<code>Rule</code>](#Rule)  
+**Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| serviceId | <code>string</code> | service id |
+| ruleId | <code>string</code> | Service Id. |
+| body | <code>Object</code> | Object that contains stitch rule details. |
+
+<a name="Rule+getAll"></a>
+
+### rule.getAll(serviceId) ⇒ <code>Promise</code>
+Returns all rules
+
+**Kind**: instance method of [<code>Rule</code>](#Rule)  
+**Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| serviceId | <code>string</code> | service id |
+
+<a name="Rule+get"></a>
+
+### rule.get(serviceId, ruleId) ⇒ <code>Promise</code>
+Returns single rule as per rule Id
+
+**Kind**: instance method of [<code>Rule</code>](#Rule)  
+**Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| serviceId | <code>string</code> | service id |
+| ruleId | <code>string</code> | rule Id |
+
+<a name="Rule+delete"></a>
+
+### rule.delete(serviceId, ruleId) ⇒ <code>Promise</code>
+Deletes single rule as per rule Id
+
+**Kind**: instance method of [<code>Rule</code>](#Rule)  
+**Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| serviceId | <code>string</code> | service id |
+| ruleId | <code>string</code> | rule Id |
