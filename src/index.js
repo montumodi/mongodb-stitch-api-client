@@ -4,6 +4,7 @@ const Trigger = require("./trigger");
 const Service = require("./service");
 const StitchFunction = require("./stitchFunction");
 const Rule = require("./rule");
+const Log = require("./log");
 const httpClient = require("got");
 
 function getFunctions(instance) {
@@ -23,6 +24,7 @@ function getMongodbStitchApiClient(options) {
   const service = new Service(httpClient, options.baseUrl, options.projectId, options.appId, tokenProvider);
   const stitchFunction = new StitchFunction(httpClient, options.baseUrl, options.projectId, options.appId, tokenProvider);
   const rule = new Rule(httpClient, options.baseUrl, options.projectId, options.appId, tokenProvider);
+  const log = new Log(httpClient, options.baseUrl, options.projectId, options.appId, tokenProvider);
 
   const functions = {};
   functions.token = getFunctions(tokenProvider);
@@ -31,6 +33,7 @@ function getMongodbStitchApiClient(options) {
   functions.service = getFunctions(service);
   functions.stitchFunction = getFunctions(stitchFunction);
   functions.rule = getFunctions(rule);
+  functions.log = getFunctions(log);
 
   return functions;
 }

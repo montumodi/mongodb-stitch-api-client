@@ -50,6 +50,7 @@ Following entities are currently supported
 - [Token](#token)
 - [StitchFunction](#stitchfunction)
 - [Rule](#rule)
+- [Log](#log)
 
 ### Application
 
@@ -365,3 +366,17 @@ Deletes single rule as per rule Id
 | --- | --- | --- |
 | serviceId | <code>string</code> | service id |
 | ruleId | <code>string</code> | rule Id |
+
+### Log
+
+<a name="Log+get"></a>
+
+### log.get([options]) ⇒ <code>Promise</code>
+Returns all the logs as per options passed
+
+**Kind**: instance method of [<code>Log</code>](#Log)  
+**Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| [options] | <code>object</code> | <code>{}</code> | Options having parameter which will be passed as query string |
