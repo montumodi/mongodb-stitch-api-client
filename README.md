@@ -51,6 +51,7 @@ Following entities are currently supported
 - [StitchFunction](#stitchfunction)
 - [Rule](#rule)
 - [Log](#log)
+- [Security](#security)
 
 ### Application
 
@@ -380,3 +381,25 @@ Returns all the logs as per options passed
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | [options] | <code>object</code> | <code>{}</code> | Options having parameter which will be passed as query string |
+
+### Security
+
+<a name="Security+create"></a>
+
+### security.allowOrigins(body) ⇒ <code>Promise</code>
+Set the allowed HTTP origins from which Stitch should allow requests.
+
+**Kind**: instance method of [<code>Security</code>](#Security)  
+**Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| body | <code>Object</code> | Object that contains allowed http origins |
+
+<a name="Security+get"></a>
+
+### security.getAll() ⇒ <code>Promise</code>
+List the allowed HTTP origins from which Stitch should allow requests.
+
+**Kind**: instance method of [<code>Security</code>](#Security)  
+**Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error  
