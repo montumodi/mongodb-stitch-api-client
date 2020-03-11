@@ -6,6 +6,8 @@ const StitchFunction = require("./stitchFunction");
 const Rule = require("./rule");
 const Log = require("./log");
 const Security = require("./security");
+const Email = require("./email");
+
 const httpClient = require("got");
 
 function getFunctions(instance) {
@@ -27,6 +29,7 @@ function getMongodbStitchApiClient(options) {
   const rule = new Rule(httpClient, options.baseUrl, options.projectId, options.appId, tokenProvider);
   const log = new Log(httpClient, options.baseUrl, options.projectId, options.appId, tokenProvider);
   const security = new Security(httpClient, options.baseUrl, options.projectId, options.appId, tokenProvider);
+  const email = new Email(httpClient, options.baseUrl, options.projectId, options.appId, tokenProvider);
 
   const functions = {};
   functions.token = getFunctions(tokenProvider);
@@ -37,6 +40,7 @@ function getMongodbStitchApiClient(options) {
   functions.rule = getFunctions(rule);
   functions.log = getFunctions(log);
   functions.security = getFunctions(security);
+  functions.email = getFunctions(email);
 
   return functions;
 }

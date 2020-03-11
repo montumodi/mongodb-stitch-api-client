@@ -402,4 +402,42 @@ Set the allowed HTTP origins from which Stitch should allow requests.
 List the allowed HTTP origins from which Stitch should allow requests.
 
 **Kind**: instance method of [<code>Security</code>](#Security)  
+**Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error
+
+### Email
+
+<a name="Email+sendConfirmationEmail"></a>
+
+### email.sendConfirmationEmail(email) ⇒ <code>Promise</code>
+Send a confirmation email.
+
+**Kind**: instance method of [<code>Email</code>](#Email)  
 **Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| email | <code>string</code> | Email address. |
+
+<a name="Email+confirmPendingUser"></a>
+
+### email.confirmPendingUser(email) ⇒ <code>Promise</code>
+Confirm a pending user.
+
+**Kind**: instance method of [<code>Email</code>](#Email)  
+**Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| email | <code>string</code> | Email address. |
+
+<a name="Email+reRunPendingConfirmation"></a>
+
+### email.reRunPendingConfirmation(email) ⇒ <code>Promise</code>
+Re-runs a pending user’s confirmation workflow.
+
+**Kind**: instance method of [<code>Email</code>](#Email)  
+**Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| email | <code>string</code> | Email address. |
