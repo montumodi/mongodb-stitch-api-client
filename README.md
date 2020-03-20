@@ -52,6 +52,7 @@ Following entities are currently supported
 - [Rule](#rule)
 - [Log](#log)
 - [Security](#security)
+- [Webhook](#webhook)
 
 ### Application
 
@@ -441,3 +442,70 @@ Re-runs a pending user’s confirmation workflow.
 | Param | Type | Description |
 | --- | --- | --- |
 | email | <code>string</code> | Email address. |
+
+### Webhook
+
+<a name="Webhook+create"></a>
+
+### webhook.create(serviceId, body) ⇒ <code>Promise</code>
+Creates the webhook
+
+**Kind**: instance method of [<code>Webhook</code>](#Webhook)  
+**Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| serviceId | <code>string</code> | service id |
+| body | <code>Object</code> | Object that contains stitch webhooks details. |
+
+<a name="Webhook+update"></a>
+
+### webhook.update(serviceId, webhookId, body) ⇒ <code>Promise</code>
+Updates the webhook
+
+**Kind**: instance method of [<code>Webhook</code>](#Webhook)  
+**Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| serviceId | <code>string</code> | service id |
+| webhookId | <code>string</code> | Service Id. |
+| body | <code>Object</code> | Object that contains stitch webhook details. |
+
+<a name="Webhook+getAll"></a>
+
+### webhook.getAll(serviceId) ⇒ <code>Promise</code>
+Returns all webhooks
+
+**Kind**: instance method of [<code>Webhook</code>](#Webhook)  
+**Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| serviceId | <code>string</code> | service id |
+
+<a name="Webhook+get"></a>
+
+### webhook.get(serviceId, webhookId) ⇒ <code>Promise</code>
+Returns single webhook as per webhook Id
+
+**Kind**: instance method of [<code>Webhook</code>](#Webhook)  
+**Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| serviceId | <code>string</code> | service id |
+| webhookId | <code>string</code> | webhook Id |
+
+<a name="Webhook+delete"></a>
+
+### webhook.delete(serviceId, webhookId) ⇒ <code>Promise</code>
+Deletes single webhook as per webhook Id
+
+**Kind**: instance method of [<code>Webhook</code>](#Webhook)  
+**Returns**: <code>Promise</code> - - promise which resolves on success and rejects on error  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| serviceId | <code>string</code> | service id |
+| webhookId | <code>string</code> | webhook Id |
