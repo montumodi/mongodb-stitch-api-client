@@ -2,7 +2,7 @@
 
 A mongdb stitch api client for nodejs.
 
-
+[![Known Vulnerabilities](https://snyk.io/test/github/montumodi/mongodb-stitch-api-client/badge.svg)](https://snyk.io/test/github/montumodi/mongodb-stitch-api-client)
 [![Coverage Status](https://coveralls.io/repos/github/montumodi/mongodb-stitch-api-client/badge.svg?branch=master)](https://coveralls.io/github/montumodi/mongodb-stitch-api-client?branch=master)
 [![Build Status](https://travis-ci.com/montumodi/mongodb-stitch-api-client.svg?branch=master)](https://travis-ci.com/montumodi/mongodb-stitch-api-client)
 [![Deps](https://david-dm.org/montumodi/mongodb-stitch-api-client.svg)](https://david-dm.org/montumodi/mongodb-stitch-api-client#info=dependencies)
