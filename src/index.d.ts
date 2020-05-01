@@ -1,15 +1,18 @@
 import {Trigger} from './trigger'
+import {Application} from './application'
+import {Service} from './service'
 
 export * from './trigger'
+export * from './application'
 
 // Stitch Client
 export interface StitchApiClient {
-    // application: Application;
+    application: Application;
     // email: Email;
     // log: Log;
     // rule: Rule;
     // security: Security;
-    // service: Service;
+    service: Service;
     // stitchFunction: StitchFunction;
     // token: Token;
     trigger: Trigger;
