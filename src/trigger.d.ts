@@ -4,5 +4,5 @@ export interface Trigger {
   delete(triggerId: string) : Promise<any>
   create(body: any) : Promise<any>
   update(triggerId: string, body: any) : Promise<any>
-  resume(triggerId: string) : Promise<any>
+  resume(triggerId: string, useResumeToken: boolean) : Promise<any>
 }

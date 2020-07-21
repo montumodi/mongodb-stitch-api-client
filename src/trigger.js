@@ -56,14 +56,15 @@ class Trigger {
   /**
    * Resumes the trigger
    * @param {string} triggerId - Service Id.
+   * @param {boolean} useResumeToken - Whether to use resume token for restarting trigger. Default is true.
    * @returns {Promise} - promise which resolves on success and rejects on error
    */
-  async resume(triggerId) {
+  async resume(triggerId, useResumeToken = true) {
     const bearerToken = await this.tokenProvider_.getBearerToken();
     const response = await this.client_({
       "url": `${this.baseUrl_}/groups/${this.projectId_}/apps/${this.appId_}/triggers/${triggerId}/resume`,
       "method": "PUT",
-      "body": JSON.stringify({}),
+      "body": JSON.stringify({"disable_token": !useResumeToken}),
       "headers": {
         "Authorization": `Bearer ${bearerToken}`
       }

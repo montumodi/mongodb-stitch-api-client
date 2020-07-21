@@ -193,7 +193,7 @@ Updates the trigger
 
 <a name="Trigger+resume"></a>
 
-### trigger.resume(triggerId) ⇒ <code>Promise</code>
+### trigger.resume(triggerId, [useResumeToken]) ⇒ <code>Promise</code>
 Resumes the trigger
 
 **Kind**: instance method of [<code>Trigger</code>](#Trigger)  
@@ -202,6 +202,7 @@ Resumes the trigger
 | Param | Type | Description |
 | --- | --- | --- |
 | triggerId | <code>string</code> | Service Id. |
+| useResumeToken | <code>bool</code> | Whether to use resume token for restarting trigger. Default is true. |
 
 <a name="Trigger+getAll"></a>
 

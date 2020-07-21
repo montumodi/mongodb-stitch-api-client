@@ -80,7 +80,7 @@ describe("Mongo Stitch Api Client - trigger", () => {
       const expectedRequest = nock(baseUrl)
         .put(`/groups/${projectId}/apps/${appId}/triggers/triggerId/resume`)
         .reply(200, [{"trigger": "name"}]);
-      const result = await client.trigger.resume("triggerId");
+      const result = await client.trigger.resume("triggerId", false);
       expect(result).to.equal([{"trigger": "name"}]);
       expect(expectedRequest.isDone()).to.be.true();
     });
