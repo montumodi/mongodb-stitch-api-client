@@ -41,13 +41,13 @@
   "homepage": "https://github.com/montumodi/mongodb-stitch-api-client#readme",
   "devDependencies": {
     "@hapi/code": "^8.0.2",
-    "@hapi/lab": "^23.0.0",
+    "@hapi/lab": "^24.1.0",
     "coveralls": "^3.1.0",
-    "eslint": "^7.9.0",
+    "eslint": "^7.11.0",
     "istanbul": "^0.4.5",
     "nock": "^13.0.4"
   },
   "dependencies": {
-    "got": "^11.7.0"
+    "got": "^11.8.0"
   }
 }
