@@ -16,6 +16,8 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org/
       - run: npm update
+      - run: npm audit
+      - run: npm audit fix
       - run: npm install
       - run: npm test
       - run: git config --global user.email "montumodi@gmail.com"
