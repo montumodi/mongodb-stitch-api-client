@@ -30,11 +30,13 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
       - run: npm version minor
+      - name: Authenticate with NPM
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
-      - run: npm publish
+      - run: npm publish --otp ${{github.event.inputs.npm_otp}}
         env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}  
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}} 
